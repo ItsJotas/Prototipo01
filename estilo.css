@@ -12,12 +12,20 @@
     --menu-underline-height: 0.3rem;
     --menu-gap: 2.8rem;
 
+    --perfil-notificacao-gap: 1.6rem;
+    
     --img-notificacao-size: 2rem;
     --img-notificacao-padding-y: 0.8rem;
     --img-notificacao-padding-x: 1.8rem;
     --img-notificacao-border-radius: 0.5rem;
     --img-notificacao-color: #4b5872;
     --img-notificacao-color-hover: #5a6581;
+
+    --botao-perfil-gap: 1.2rem;
+    --img-perfil-size: 5rem;
+    --img-perfil-padding: 0.2rem;
+    --perfil-font-size: 3rem;
+    --perfil-color-hover: #008cff59;
 }
 
 html{
@@ -70,16 +78,51 @@ body{
 
 .perfil-notificacao{
     display: flex;
+    gap: var(--perfil-notificacao-gap);
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.botao-notificacao{
+    padding: var(--img-notificacao-padding-y) var(--img-notificacao-padding-x);
+    background-color: var(--img-notificacao-color);
+    border-radius: var(--img-notificacao-border-radius);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
 
 .img-notificação{
     width: var(--img-notificacao-size);
     height: var(--img-notificacao-size);
-    padding: var(--img-notificacao-padding-y) var(--img-notificacao-padding-x);
-    background-color: var(--img-notificacao-color);
-    border-radius: var(--img-notificacao-border-radius);
 }
 
-.img-notificação:hover{
+.botao-notificacao:hover{
     background-color: var(--img-notificacao-color-hover);
+}
+
+.botao-perfil{
+    display: flex;
+    align-items: center;
+    gap: var(--botao-perfil-gap);
+    color: var(--font-color-active);
+    text-decoration: none;
+    padding: var(--img-perfil-padding); 
+    background-color: var(--img-notificacao-color);
+}
+
+.botao-perfil:hover{
+    background-color: var(--perfil-color-hover);
+}
+
+.img-perfil{
+    width: var(--img-perfil-size);
+    height: var(--img-perfil-size);
+    border-right: 0.3rem solid var(--font-color-active);
+}
+
+.botao-perfil p{
+    font-size: var(--perfil-font-size);
+    margin: 0 1rem 0 0;
+    font-family: "Roboto";
 }
