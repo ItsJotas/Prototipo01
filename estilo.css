@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root{
+    --border-radius: 0.5rem;
+
     --header-color: #313952;
     --font-color: #e7e7e7;
     --font-color-hover: #ffffff;
@@ -17,15 +19,21 @@
     --img-notificacao-size: 2rem;
     --img-notificacao-padding-y: 0.8rem;
     --img-notificacao-padding-x: 1.8rem;
-    --img-notificacao-border-radius: 0.5rem;
     --img-notificacao-color: #4b5872;
     --img-notificacao-color-hover: #5a6581;
 
     --botao-perfil-gap: 1.2rem;
     --img-perfil-size: 5rem;
     --img-perfil-padding: 0.2rem;
-    --perfil-font-size: 3rem;
+    --perfil-font-size: 2.5rem;
     --perfil-color-hover: #008cff59;
+
+    --barra-pesquisa-height: 3.5rem;
+    --barra-pesquisa-color: #333a4b;
+    --barra-pesquisa-color-hover: #282d3a;
+    --barra-pesquisa-duration: 0.3s;
+    --barra-pesquisa-font-size: 2rem;
+    --img-lupa: 2.5rem;
 }
 
 html{
@@ -38,6 +46,8 @@ body{
     padding: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero{
@@ -45,7 +55,7 @@ body{
     align-items: center;
     justify-content: space-between;
     background-color: var(--header-color);
-    width: auto;
+    width: 100%;
     padding: var(--padding-header);
 }
 
@@ -86,7 +96,7 @@ body{
 .botao-notificacao{
     padding: var(--img-notificacao-padding-y) var(--img-notificacao-padding-x);
     background-color: var(--img-notificacao-color);
-    border-radius: var(--img-notificacao-border-radius);
+    border-radius: var(--border-radius);
     display: flex;
     align-items: center; 
     justify-content: center;
@@ -125,4 +135,59 @@ body{
     font-size: var(--perfil-font-size);
     margin: 0 1rem 0 0;
     font-family: "Roboto";
+}
+
+.main{
+    display: flex;
+    flex-grow: 1;
+    width: auto;
+    align-content: flex-start;
+}
+
+.menu-busca{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+    background-color: var(--img-notificacao-color);
+}
+
+.barra-pesquisa{
+    width: 95%;
+    height: var(--barra-pesquisa-height);
+    background-color: var(--barra-pesquisa-color);
+    border-radius: var(--border-radius);
+    align-self: center;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    transition-property: background-color, box-shadow;
+    transition-duration: var(--barra-pesquisa-duration), var(--barra-pesquisa-duration);
+    gap: 1.5rem;
+}
+
+.img-pesquisa{
+    width: var(--img-lupa);
+    height: var(--img-lupa);
+    margin-left: 2.5%;
+}
+
+.texto-buscar{
+    opacity: 0;
+    font-family: "Roboto";
+    color: #9ca2ad;
+    font-size: var(--barra-pesquisa-font-size);
+    font-style: italic;
+    transition-property: opacity;
+    transition-duration: var(--barra-pesquisa-duration);
+}
+
+.barra-pesquisa:hover .texto-buscar{
+    opacity: 1;
+}
+
+.barra-pesquisa:hover{
+    cursor: text;
+    background-color: var(--barra-pesquisa-color-hover);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
