@@ -2,7 +2,6 @@
 
 :root{
     --border-radius: 0.5rem;
-
     --header-color: #313952;
     --font-color: #e7e7e7;
     --font-color-hover: #ffffff;
@@ -34,18 +33,19 @@
     --barra-pesquisa-duration: 0.3s;
     --barra-pesquisa-font-size: 2rem;
     --img-lupa: 2.5rem;
+
+    --filtros-font-size: 1.6rem;
 }
 
-html{
+html, body{
     font-size: 62.5%;
-    
+    width: 100%;
+    height: 100%; 
 }
 
 body{
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -57,6 +57,7 @@ body{
     background-color: var(--header-color);
     width: 100%;
     padding: var(--padding-header);
+    box-sizing: border-box;
 }
 
 .header-menu{
@@ -141,6 +142,8 @@ body{
     display: flex;
     flex-grow: 1;
     width: auto;
+    height: 100%;
+    box-sizing: border-box;
     align-content: flex-start;
 }
 
@@ -150,6 +153,8 @@ body{
     width: 15%;
     height: 100%;
     background-color: var(--img-notificacao-color);
+    box-sizing: border-box;
+
 }
 
 .barra-pesquisa{
@@ -190,4 +195,34 @@ body{
     cursor: text;
     background-color: var(--barra-pesquisa-color-hover);
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.filtros{
+    font-size: var(--filtros-font-size);
+    text-transform: uppercase;
+    font-family: "Roboto";
+    margin: 0;
+    margin: 2.6rem 0 0 1rem;
+    color: #34a4ff;
+}
+
+.opcoes-genero{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-left: 2rem;
+    margin-bottom: 1.6rem;
+    padding: 0;
+}
+
+.opcoes-genero a{
+    color: #d6dfe6;
+    text-decoration: none;
+    font-family: "Roboto";
+    font-size: var(--filtros-font-size);
+}
+
+.opcoes-genero a:hover{
+    color: var(--font-color-hover);
 }
