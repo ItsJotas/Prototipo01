@@ -135,7 +135,7 @@ body{
 .botao-perfil p{
     font-size: var(--perfil-font-size);
     margin: 0 1rem 0 0;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
 }
 
 .main{
@@ -150,11 +150,11 @@ body{
 .menu-busca{
     display: flex;
     flex-direction: column;
-    width: 15%;
+    width: 12%;
     height: 100%;
     background-color: var(--img-notificacao-color);
     box-sizing: border-box;
-
+    min-width: 22rem;
 }
 
 .barra-pesquisa{
@@ -179,7 +179,7 @@ body{
 
 .texto-buscar{
     opacity: 0;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     color: #9ca2ad;
     font-size: var(--barra-pesquisa-font-size);
     font-style: italic;
@@ -200,13 +200,13 @@ body{
 .filtros{
     font-size: var(--filtros-font-size);
     text-transform: uppercase;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     margin: 0;
     margin: 2.6rem 0 0 1rem;
     color: #34a4ff;
 }
 
-.opcoes-genero{
+.opcoes{
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -216,13 +216,112 @@ body{
     padding: 0;
 }
 
-.opcoes-genero a{
-    color: #d6dfe6;
+.opcoes a{
+    color: #dee2e9;
     text-decoration: none;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-size: var(--filtros-font-size);
 }
 
-.opcoes-genero a:hover{
+.opcoes a:hover{
     color: var(--font-color-hover);
+}
+
+.menu-jogos{
+    background-color: #2c3653;
+    flex-grow: 1;
+    height: 100%;
+    border-left: #212125 solid 2px;
+    border-top: #3b5675 solid 2px;
+    box-sizing: border-box;
+}
+
+.area-cards{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 4rem;
+    margin: 4rem;
+}
+
+.cards-jogos{
+    width: 20rem;
+    height: 30rem;
+    position: relative; 
+    overflow: hidden;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), -1px -1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cards-jogos a{
+    text-decoration: none;   
+}
+
+.imagem-cards{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+    margin: 0;
+    display: block;
+}
+
+.card-nome{
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #212125bb;
+}
+
+.nome-jogo{
+    padding: 0;
+    margin: 0.5em;
+    font-family: "Roboto", sans-serif;
+    font-size: 2.6em;
+    text-align: center;
+    color: #dee2e9;
+    text-transform: uppercase; 
+    letter-spacing: 0.1rem;  
+}
+
+.imagem-fundo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    filter: blur(10px); 
+    transform: scale(1.1);
+}
+
+.background-transparente{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.reflexo {
+    position: absolute;
+    top: -10%; 
+    left: 0;
+    width: 100%;
+    height: 90%; 
+    background: linear-gradient(240deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 30%, transparent 100%);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    z-index: 3;
+}
+
+.reflexo:hover{
+    opacity: 1;
 }
